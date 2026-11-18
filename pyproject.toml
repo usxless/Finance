@@ -1,0 +1,23 @@
+[project]
+name = "aktien"
+version = "0.1.0"
+description = "Aktienanalyse auf Basis von Financial Modeling Prep (FMP): Kennzahlen, DCF, Peer-Vergleich"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+aktien = "aktien.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
